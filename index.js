@@ -19,7 +19,7 @@ const user = require('./src/routes/user')
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://vinylstorelyon.vercel.app',
     credentials: true,
   })
 )
