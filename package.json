@@ -21,8 +21,8 @@
     "npm": "6.14.15"
   },
   "scripts": {
-    "start": "node src/app.js",
-    "server": "nodemon src/app.js",
+    "start": "node src/index.js",
+    "server": "nodemon src/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
