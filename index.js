@@ -19,7 +19,7 @@ const user = require('./src/routes/user')
 
 app.use(
   cors({
-    origin: 'https://vinylstorelyon.vercel.app',
+    origin: '*',
     credentials: true,
   })
 )
