@@ -1,5 +1,5 @@
 const express = require('express')
-const connectDB = require('./src/db/connect')
+const connectDB = require('./db/connect')
 const dotenv = require('dotenv').config()
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
@@ -9,10 +9,10 @@ const app = express()
 
 //-------------------------------------------------//
 
-const products = require('./src/routes/product')
-const orders = require('./src/routes/order')
-const auth = require('./src/routes/auth')
-const user = require('./src/routes/user')
+const products = require('./routes/product')
+const orders = require('./routes/order')
+const auth = require('./routes/auth')
+const user = require('./routes/user')
 
 //------------------------------------------------//
 
