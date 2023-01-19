@@ -1,5 +1,5 @@
 const express = require('express')
-const connectDB = require('./db/connect')
+const connectDB = require('./src/db/connect')
 const dotenv = require('dotenv').config()
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
@@ -9,18 +9,11 @@ const app = express()
 
 //-------------------------------------------------//
 
-const products = require('./routes/product')
-const orders = require('./routes/order')
-const auth = require('./routes/auth')
-const user = require('./routes/user')
+const products = require('./src/routes/product')
+const orders = require('./src/routes/order')
+const auth = require('./src/routes/auth')
+const user = require('./src/routes/user')
 
-//------------------------------------------------//
-
-if( process.env.NODE_ENV === 'production'){
-  app.use(
-    cors({ origin: 'https://vinylstorelyon.herokuapp.com', credentials: true })
-  )
-}
 
 //----------------------------------------//
 
@@ -40,18 +33,7 @@ app.use('/api/v1/products', products)
 app.use('/api/v1/orders', orders)
 app.use('/api/v1/auth', auth)
 app.use('/api/v1/users', user)
-app.get('/api/v1/keys/paypal', (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID || 'sb')
-})
 
-//-----------------------------------------//
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, '../client/build')))
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
-  })
-}
 
 //-----------------------------------------//
 

@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
@@ -21,8 +21,8 @@
     "npm": "6.14.15"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "server": "nodemon src/index.js",
+    "start": "node index.js",
+    "server": "nodemon index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
